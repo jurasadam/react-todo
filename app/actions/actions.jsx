@@ -20,7 +20,7 @@ export var addTodo = (text) => {
 }
 
 // toggleTodo(id) TOGGLE_TODO
-export var toggleTodoo = (id) => {
+export var toggleTodo = (id) => {
   return {
     type: 'TOGGLE_TODO',
     id

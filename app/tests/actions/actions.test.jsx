@@ -36,7 +36,7 @@ describe('Actions', () => {
       type: 'TOGGLE_TODO',
       id: '13'
     }
-    var res = actions.toggleTodoo(action.id)
+    var res = actions.toggleTodo(action.id)
 
     expect(res).toEqual(action)
   })
