@@ -5,7 +5,7 @@ var TodoAPI = require('TodoAPI')
 
 export var TodoList = React.createClass({
   render: function () {
-    var {todos, showCompleted, searchText} = this.props
+    var {todos, showCompleted, searchText} = this.props // works because of connect at EOF
     var renderTodos = () => {
       if (todos.length === 0) {
         return (
