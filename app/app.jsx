@@ -12,7 +12,6 @@ var TodoAPI = require('TodoAPI')
 store.subscribe(() => {
   var state = store.getState()
   console.log('New state', state)
-  debugger
   TodoAPI.setTodos(state.todos)
 })
 
