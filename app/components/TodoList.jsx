@@ -7,7 +7,6 @@ export var TodoList = React.createClass({
   render: function () {
     var {todos, showCompleted, searchText} = this.props // works because of connect at EOF
     var renderTodos = () => {
-
       var filteredTodos = TodoAPI.filterTodos(todos, showCompleted, searchText)
 
       if (filteredTodos.length === 0) {

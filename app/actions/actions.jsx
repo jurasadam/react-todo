@@ -58,7 +58,7 @@ export var startAddTodos = () => {
 
       formattedTodos = Object.keys(todos).map(function (todoId) {
         return {
-          todoId,
+          id: todoId,
           ...todos[todoId]
         }
       })
