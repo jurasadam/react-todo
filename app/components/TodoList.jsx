@@ -7,16 +7,20 @@ export var TodoList = React.createClass({
   render: function () {
     var {todos, showCompleted, searchText} = this.props // works because of connect at EOF
     var renderTodos = () => {
-      if (todos.length === 0) {
+
+      var filteredTodos = TodoAPI.filterTodos(todos, showCompleted, searchText)
+
+      if (filteredTodos.length === 0) {
         return (
           <p className='container__message'>Nothing To Do</p>
         )
+      } else {
+        return filteredTodos.map((todo) => {
+          return (
+            <Todo key={todo.id} {...todo} />
+          )
+        })
       }
-      return TodoAPI.filterTodos(todos, showCompleted, searchText).map((todo) => {
-        return (
-          <Todo key={todo.id} {...todo} />
-        )
-      })
     }
 
     return (
