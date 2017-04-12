@@ -91,6 +91,21 @@ describe('Reducers', () => {
     expect(res.length).toEqual(1)
     expect(res[0]).toEqual(todos[0])
   })
+
+  it('should clear todos', () => {
+    var todo = [{
+        id: 'abs123',
+        text: 'Something',
+        completed: false,
+        createdAt: 9293424
+    }]
+    var action = {
+      type: 'LOGOUT'
+    }
+    var res = reducers.todosReducer(df(todo), df(action))
+
+    expect(res.length).toEqual(0)
+  })
 })
 
 describe('authReducer', () => {
