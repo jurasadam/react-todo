@@ -70,6 +70,28 @@ export var startAddTodos = () => {
   }
 }
 
+// update on Firebase changes version
+// export var startAddTodos = () => {
+//   return (dispatch, getState) => {
+//     var uid = getState().auth.uid
+//     var todosRef = firebaseRef.child(`users/${uid}/todos`)
+//
+//     return todosRef.on('value', (snapshot) => {
+//       var todos = snapshot.val() || {}
+//       var parsedTodos = []
+//
+//       Object.keys(todos).forEach((todoId) => {
+//         parsedTodos.push({
+//           id: todoId,
+//           ...todos[todoId]
+//         })
+//       })
+//
+//       dispatch(addTodos(parsedTodos))
+//     })
+//   }
+// }
+
 // toggleTodo(id) TOGGLE_TODO
 export var updateTodo = (id, updates) => {
   return {
